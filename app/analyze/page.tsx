@@ -121,11 +121,11 @@ export default function AnalyzePage() {
                   <SelectValue placeholder="Select time range" />
                 </SelectTrigger>
                 <SelectContent className="bg-gray-800 text-white">
-                  <SelectItem value="1m" className="hover:bg-gray-700">Past 1 Month</SelectItem>
-                  <SelectItem value="2m" className="hover:bg-gray-700">Past 2 Months</SelectItem>
-                  <SelectItem value="6m" className="hover:bg-gray-700">Past 6 Months</SelectItem>
-                  <SelectItem value="1y" className="hover:bg-gray-700">Past 1 Year</SelectItem>
                   <SelectItem value="all" className="hover:bg-gray-700">All Time</SelectItem>
+                  <SelectItem value="1y" className="hover:bg-gray-700">Past 1 Year</SelectItem>
+                  <SelectItem value="6m" className="hover:bg-gray-700">Past 6 Months</SelectItem>
+                  <SelectItem value="2m" className="hover:bg-gray-700">Past 2 Months</SelectItem>
+                  <SelectItem value="1m" className="hover:bg-gray-700">Past 1 Month</SelectItem>
                 </SelectContent>
               </Select>
             </div>
