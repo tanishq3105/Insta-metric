@@ -7,4 +7,9 @@ const nextConfig = {
   }
 }
 
-module.exports = nextConfig 
+module.exports = {
+  ...nextConfig,
+  images: {
+    domains: ['media.licdn.com','img.freepik.com'],
+  },
+}

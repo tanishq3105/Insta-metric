@@ -7,15 +7,25 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Instagram, Sparkles, ArrowLeft, TrendingUp, Users, Eye, Hash, Star } from 'lucide-react'
 import { Loader } from '../../components/ui/loader'
-import { useLangflow } from '@/hooks/useLangflow'
 import postAnalytics from '@/services/postAnalytics'
+
+// Define the interface for the analytics data
+interface AnalyticsData {
+  metrics: {
+    engagementRate: number;
+    clickThroughRate: number;
+    impressions: number;
+    averageComments: number;
+    saveRate: number;
+  };
+}
 
 export default function AnalyzePage() {
   const [postType, setPostType] = useState('')
   const [timeRange, setTimeRange] = useState<'1m' | '2m' | '6m' | '1y' | 'all'>('1m')
   const [showResults, setShowResults] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
-  const [analyticsData, setAnalyticsData] = useState<any>(null)
+  const [analyticsData, setAnalyticsData] = useState<AnalyticsData | null>(null)
   const [insightsList, setInsightsList] = useState<string[]>([])
 
   const handleAnalyze = () => {
@@ -165,4 +175,3 @@ export default function AnalyzePage() {
     </div>
   )
 }
-

@@ -30,7 +30,6 @@ class LangflowClient {
     }
   }
 
-  // ... rest of the LangflowClient methods ...
 }
 
 export default LangflowClient; 

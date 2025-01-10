@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Instagram, BarChart2, PieChart, Zap, TrendingUp } from 'lucide-react'
+import { Instagram, BarChart2, PieChart, TrendingUp } from 'lucide-react'
 
 export default function HomePage() {
   return (
@@ -40,7 +40,7 @@ export default function HomePage() {
             <CardContent className="p-6 flex flex-col items-center text-center">
               <TrendingUp className="h-12 w-12 text-purple-400 mb-4" />
               <h3 className="text-xl font-semibold text-white mb-2">Comparative Insights</h3>
-              <p className="text-purple-200">Get detailed comparisons of your posts' performance against your account average.</p>
+              <p className="text-purple-200">Get detailed comparisons of your posts performance against your account average.</p>
             </CardContent>
           </Card>
           <Card className="bg-black/30 border-none shadow-xl backdrop-blur-sm">
@@ -60,9 +60,8 @@ export default function HomePage() {
         </div>
       </section>
       <footer className="w-full text-center py-4 text-purple-200 z-10">
-        <p>&copy; 2023 InstaAnalyzer. All rights reserved.</p>
+        <p>&copy; 2025 InstaAnalyzer. All rights reserved.</p>
       </footer>
     </div>
   )
 }
-
