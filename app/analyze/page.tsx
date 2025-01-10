@@ -38,7 +38,7 @@ export default function AnalyzePage() {
         setInsightsList(insights)
         setShowResults(true)
         setIsLoading(false)
-      }, 2000)
+      }, 4000)
     }
   }
 
