@@ -1,101 +1,68 @@
-import Image from "next/image";
+import Link from 'next/link'
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Instagram, BarChart2, PieChart, Zap, TrendingUp } from 'lucide-react'
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen w-full bg-gradient-to-br from-gray-900 via-purple-900 to-violet-800 flex flex-col items-center justify-center p-4">
+      <div className="absolute top-0 left-0 w-full h-full bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center opacity-10"></div>
+      <nav className="w-full max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center z-10">
+        <div className="flex items-center space-x-2">
+          <Instagram className="h-8 w-8 text-white" />
+          <span className="text-2xl font-bold text-white">InstaAnalyzer</span>
         </div>
+        <div className="space-x-4">
+          <Link href="/analyze" className="text-white hover:text-purple-200 transition-colors">
+            Analyze
+          </Link>
+          <Link href="/about" className="text-white hover:text-purple-200 transition-colors">
+            About
+          </Link>
+        </div>
+      </nav>
+      <main className="flex-grow flex flex-col items-center justify-center z-10">
+        <h1 className="text-4xl md:text-6xl font-bold text-white text-center mb-6">
+          Unlock Your Instagram Insights
+        </h1>
+        <p className="text-xl text-purple-200 text-center max-w-2xl mb-12">
+          Analyze your Instagram posts, understand your audience, and optimize your content strategy with powerful analytics and comparative insights.
+        </p>
+        <Link href="/analyze">
+          <Button className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white text-lg px-8 py-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+            Start Analyzing
+          </Button>
+        </Link>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      <section className="w-full max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Card className="bg-black/30 border-none shadow-xl backdrop-blur-sm">
+            <CardContent className="p-6 flex flex-col items-center text-center">
+              <TrendingUp className="h-12 w-12 text-purple-400 mb-4" />
+              <h3 className="text-xl font-semibold text-white mb-2">Comparative Insights</h3>
+              <p className="text-purple-200">Get detailed comparisons of your posts' performance against your account average.</p>
+            </CardContent>
+          </Card>
+          <Card className="bg-black/30 border-none shadow-xl backdrop-blur-sm">
+            <CardContent className="p-6 flex flex-col items-center text-center">
+              <BarChart2 className="h-12 w-12 text-purple-400 mb-4" />
+              <h3 className="text-xl font-semibold text-white mb-2">Monthly Performance</h3>
+              <p className="text-purple-200">Track your engagement trends over time with interactive line charts.</p>
+            </CardContent>
+          </Card>
+          <Card className="bg-black/30 border-none shadow-xl backdrop-blur-sm">
+            <CardContent className="p-6 flex flex-col items-center text-center">
+              <PieChart className="h-12 w-12 text-purple-400 mb-4" />
+              <h3 className="text-xl font-semibold text-white mb-2">Content Distribution</h3>
+              <p className="text-purple-200">Visualize your content mix and optimize your posting strategy.</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+      <footer className="w-full text-center py-4 text-purple-200 z-10">
+        <p>&copy; 2023 InstaAnalyzer. All rights reserved.</p>
       </footer>
     </div>
-  );
+  )
 }
+
